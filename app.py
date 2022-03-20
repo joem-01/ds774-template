@@ -15,6 +15,10 @@ def home():
 def directory():
     return render_template('directory.html')
 
+@app.route("/documents")
+def documents():
+    return render_template('documents.html')
+
 @app.route("/courses")
 def courses():
     return render_template('courses.html')
