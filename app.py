@@ -12,7 +12,7 @@ def home():
     return render_template('home.html')
     
 @app.route("/announcements")
-def courses():
+def announcements():
     return render_template('announcements.html')
 
 @app.route("/documents")
