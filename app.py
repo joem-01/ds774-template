@@ -27,6 +27,10 @@ def announcements():
 def events():
     return render_template('events.html')
 
+@app.route("/issues")
+def issues():
+    return render_template('issues.html')
+
 @app.route("/courses")
 def courses():
     return render_template('courses.html')
