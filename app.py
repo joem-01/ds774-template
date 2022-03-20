@@ -27,8 +27,8 @@ def announcements():
 def events():
     return render_template('events.html')
 
-@app.route('/issues', methods=['GET', 'POST'])
-def issues():
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
     message = ''
     if request.method == 'POST':
         fname = request.form['fname']
@@ -38,11 +38,11 @@ def issues():
         result = contact_form(fname, lname, eaddress, message)
 
         if result:
-            return render_template('issues.html', message='Thank you for your submission')
+            return render_template('contact.html', message='Thank you for your submission')
         else:
-            return render_template('issues.html', message='Error with submission')
+            return render_template('contact.html', message='Error with submission')
     else:
-        return render_template('issues.html', message=message)
+        return render_template('contact.html', message=message)
 
 @app.route("/admin", methods=['GET', 'POST'])
 def admin():
