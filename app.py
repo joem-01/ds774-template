@@ -15,6 +15,10 @@ def home():
 def courses():
     return render_template('announcements.html')
 
+@app.route("/documents")
+def documents():
+    return render_template('documents.html')
+
 @app.route("/courses")
 def courses():
     return render_template('courses.html')
