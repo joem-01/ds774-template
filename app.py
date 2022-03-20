@@ -27,16 +27,8 @@ def announcements():
 def events():
     return render_template('events.html')
 
-@app.route("/issues")
+@app.route('/issues', methods=['GET', 'POST'])
 def issues():
-    return render_template('issues.html')
-
-@app.route("/courses")
-def courses():
-    return render_template('courses.html')
-
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
     message = ''
     if request.method == 'POST':
         fname = request.form['fname']
