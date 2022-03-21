@@ -17,11 +17,11 @@ def connect_to_db():
     return connection
 
 
-def contact_form(fname, lname, eaddress, message):
+def contact_form(fname, lname, topic, message):
     
     conn = connect_to_db()
 
-    sql = f"INSERT INTO contacts(fname,lname,eaddress,message) VALUES('{fname}', '{lname}', '{eaddress}', '{message}');"
+    sql = f"INSERT INTO contacts(fname,lname,topic,message) VALUES('{fname}', '{lname}', '{topic}', '{message}');"
     try:
 
         # create a new cursor
@@ -175,10 +175,10 @@ def get_single_record(message_id):
         if conn is not None:
             conn.close()
 
-def edit_record(message_id, fname, lname, eaddress, message):
+def edit_record(message_id, fname, lname, topic, message):
     conn = connect_to_db()
 
-    sql = f"update contacts set fname='{fname}',lname='{lname}',eaddress='{eaddress}',message='{message}' where message_id='{message_id}';"
+    sql = f"update contacts set fname='{fname}',lname='{lname}',topic='{topic}',message='{message}' where message_id='{message_id}';"
 
     try:
 

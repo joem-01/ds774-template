@@ -41,9 +41,9 @@ def contact():
     if request.method == 'POST':
         fname = request.form['fname']
         lname = request.form['lname']
-        eaddress = request.form['eaddress']
+        topic = request.form['topic']
         message = request.form['message']
-        result = contact_form(fname, lname, eaddress, message)
+        result = contact_form(fname, lname, topic, message)
 
         if result:
             return render_template('contact.html', message='Thank you for your submission')
@@ -120,10 +120,10 @@ def edit():
         if request.form.get('edit') == 'save':
             fname = request.form['fname']
             lname = request.form['lname']
-            eaddress = request.form['eaddress']
+            topic = request.form['topic']
             message = request.form['message']
-            print(fname, lname, eaddress, message)
-            edit_record(msg_id, fname, lname, eaddress, message)
+            print(fname, lname, topic, message)
+            edit_record(msg_id, fname, lname, topic, message)
             return redirect('/admin')
 
         elif request.form.get('edit') == 'cancel':
